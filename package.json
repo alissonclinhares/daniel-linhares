@@ -1,12 +1,15 @@
 {
   "name": "site-daniel-vite-v5-clean",
+  "homepage": "https://alissonclinhares.github.io/daniel-linhares",
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint src --ext .ts,.tsx",
-    "format": "prettier --write \"src/**/*.{ts,tsx}\""
+    "format": "prettier --write \"src/**/*.{ts,tsx}\"",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.2.4",
@@ -30,6 +33,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
     "eslint-plugin-react": "^7.33.2",
+    "gh-pages": "^6.3.0",
     "prettier": "^3.2.5",
     "typescript": "^5.3.3",
     "vite": "^5.2.10"
