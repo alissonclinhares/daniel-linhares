@@ -89,7 +89,7 @@ export default function App() {
       {/* Hero */}
       <Box as="section" id="inicio" position="relative">
         <Image
-          src="/daniel/foto1.jpeg"
+          src={`${import.meta.env.BASE_URL}daniel/foto1.jpeg`}
           alt="Hero"
           w="100%"
           maxH="100vh"
@@ -125,8 +125,8 @@ export default function App() {
         <Container maxW="6xl">
           <Flex direction={['column', 'row']} gap={12} align="center">
             <Image
-              src="/daniel/foto6.jpeg"
-              alt="Daniel"
+              src={`${import.meta.env.BASE_URL}daniel/foto6.jpeg`}
+              alt="Hero"
               borderRadius="lg"
               boxShadow="lg"
               maxW="400px"
@@ -211,22 +211,22 @@ export default function App() {
           </Heading>
           <SimpleGrid columns={[1, 2, 3]} spacing={6}>
             {[
+              'foto1.jpeg',
               'foto6.jpeg',
-              'foto2.jpeg',
               'foto7.jpeg',
               'foto4.jpeg',
               'foto5.jpeg',
-              'foto8.jpeg',
-              'foto9.jpeg',
-              'foto10.jpeg',
               'foto11.jpeg',
+              'foto9.jpeg',
+              'foto8.jpeg',
+              'foto10.jpeg',
               'foto12.jpeg',
               'foto13.jpeg',
               'foto14.jpeg',
             ].map((img, i) => (
               <Image
                 key={i}
-                src={`/daniel/${img}`}
+                src={`${import.meta.env.BASE_URL}daniel/${img}`}
                 alt={`Daniel ${i + 1}`}
                 borderRadius="md"
                 objectFit="cover"
