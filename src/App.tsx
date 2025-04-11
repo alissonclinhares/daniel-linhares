@@ -9,7 +9,6 @@ import {
   Image,
   Link,
   SimpleGrid,
-  Stack,
   Text,
   VStack,
   useDisclosure,
@@ -24,6 +23,7 @@ import { MdWhatsapp } from 'react-icons/md';
 import { FaBirthdayCake, FaRulerVertical, FaFutbol, FaShoePrints } from 'react-icons/fa';
 import React, { useState } from 'react';
 import { HamburgerIcon } from '@chakra-ui/icons';
+import { IconType } from 'react-icons';
 
 export default function App() {
   const [language, setLanguage] = useState<'pt' | 'en'>('pt');
@@ -32,7 +32,16 @@ export default function App() {
 
   return (
     <Box bg="gray.900" color="gray.100" fontFamily="'Poppins', sans-serif">
-      <Box as="header" position="sticky" top="0" zIndex="1000" bg="gray.900" py={4} borderBottom="1px solid" borderColor="gray.700">
+      <Box
+        as="header"
+        position="sticky"
+        top="0"
+        zIndex="1000"
+        bg="gray.900"
+        py={4}
+        borderBottom="1px solid"
+        borderColor="gray.700"
+      >
         <Container maxW="6xl">
           <Flex justify="space-between" align="center">
             <Heading size="md">Daniel Linhares</Heading>
@@ -46,8 +55,12 @@ export default function App() {
               <NavLink href="#galeria" label={t.menu.galeria} />
               <NavLink href="#contato" label={t.menu.contato} />
               <HStack spacing={1}>
-                <Button variant="ghost" size="sm" onClick={() => setLanguage('pt')}>🇧🇷</Button>
-                <Button variant="ghost" size="sm" onClick={() => setLanguage('en')}>🇬🇧</Button>
+                <Button variant="ghost" size="sm" onClick={() => setLanguage('pt')}>
+                  🇧🇷
+                </Button>
+                <Button variant="ghost" size="sm" onClick={() => setLanguage('en')}>
+                  🇬🇧
+                </Button>
               </HStack>
             </HStack>
 
@@ -77,8 +90,22 @@ export default function App() {
                 <NavLink href="#galeria" label={t.menu.galeria} />
                 <NavLink href="#contato" label={t.menu.contato} />
                 <HStack spacing={2}>
-                  <Button onClick={() => { setLanguage('pt'); onClose(); }}>🇧🇷</Button>
-                  <Button onClick={() => { setLanguage('en'); onClose(); }}>🇬🇧</Button>
+                  <Button
+                    onClick={() => {
+                      setLanguage('pt');
+                      onClose();
+                    }}
+                  >
+                    🇧🇷
+                  </Button>
+                  <Button
+                    onClick={() => {
+                      setLanguage('en');
+                      onClose();
+                    }}
+                  >
+                    🇬🇧
+                  </Button>
                 </HStack>
               </VStack>
             </DrawerBody>
@@ -276,7 +303,7 @@ function NavLink({ href, label }: { href: string; label: string }) {
   );
 }
 
-function StatBox({ icon, value, label }: { icon: any; value: string; label: string }) {
+function StatBox({ icon, value, label }: { icon: IconType; value: string; label: string }) {
   return (
     <VStack spacing={3} p={6} borderRadius="lg" bg="gray.800" textAlign="center" boxShadow="lg">
       <Icon as={icon} boxSize={8} color="teal.300" />
